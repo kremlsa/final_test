@@ -15,3 +15,8 @@ class LoginPageLocators():
     #CUR_URL = (driver.current_url)
     LOGIN_FORM = (By.CSS_SELECTOR, "#login_form")
     REG_FORM = (By.CSS_SELECTOR, "#register_form")
+
+class BasePageLocators():
+    LOGIN_LINK = (By.CSS_SELECTOR, "#login_link")
+    LOGIN_LINK_INVALID = (By.CSS_SELECTOR, "#login_link_inc")
+    BASKET_LINK_TOP = (By.CSS_SELECTOR, ".basket-mini > span > a")
