@@ -3,6 +3,8 @@ from selenium.webdriver.common.by import By
 
 class MainPageLocators():
     LOGIN_LINK = (By.CSS_SELECTOR, "#login_link")
+    BASKET_ITEMS = (By.CSS_SELECTOR, ".basket-items")
+    BASKET_MESSAGE = (By.CSS_SELECTOR, ".content")
 
 class ProductPageLocators():
     BASKET_LINK = (By.CSS_SELECTOR, ".btn-add-to-basket")

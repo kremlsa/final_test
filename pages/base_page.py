@@ -6,6 +6,7 @@ from selenium.webdriver.support.ui import WebDriverWait
 from selenium.webdriver.support import expected_conditions as EC
 from .locators import BasePageLocators
 from .locators import MainPageLocators
+from .locators import ProductPageLocators
 
 class BasePage():
     def __init__(self, browser, url):
@@ -66,3 +67,10 @@ class BasePage():
     def open_basket_link_top(self):
         link = self.browser.find_element(*BasePageLocators.BASKET_LINK_TOP)
         link.click()
+		
+    def guest_cant_see_product_in_basket(self):		
+        assert self.is_not_element_present(*MainPageLocators.BASKET_ITEMS), "Basket items is presented, but should not be"
+		
+    def guest_cant_see_message_empty(self):			
+        message = self.browser.find_element(*MainPageLocators.BASKET_MESSAGE).text
+        assert message == "Your basket is empty. Continue shopping" , "Message not presented"

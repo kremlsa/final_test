@@ -1,6 +1,8 @@
 from pages.main_page import MainPage
 from pages.login_page import LoginPage
+from pages.product_page import ProductPage
 import time
+import pytest
 
 #def test_guest_can_go_to_login_page(browser):
 #    link = "http://selenium1py.pythonanywhere.com/"
@@ -35,10 +37,14 @@ import time
 #    page.should_be_register_form()
 	
 def test_guest_cant_see_product_in_basket_opened_from_main_page(browser):
-    link = "http://selenium1py.pythonanywhere.com/en-gb/accounts/login/"
+#    link = "http://selenium1py.pythonanywhere.com/en-gb/accounts/login/"
+    link ="http://selenium1py.pythonanywhere.com/en-gb/catalogue/the-city-and-the-stars_95/"
     page = MainPage(browser, link)
     page.open()
     page.should_be_basket_link_top()
+    time.sleep(5)
     page.open_basket_link_top()
+    page.guest_cant_see_product_in_basket()	
+    page.guest_cant_see_message_empty()	
     time.sleep(5)
 	

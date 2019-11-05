@@ -44,3 +44,4 @@ class ProductPage(BasePage):
 		
     def message_disappeared_after_adding_product_to_basket(self):
         assert self.is_disappeared(*ProductPageLocators.MESSAGE_ADD), "Success message is presented, but should not be"
+		
